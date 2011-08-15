@@ -1,13 +1,13 @@
 SampeApp::Application.routes.draw do
+  get "users/new"
   get "pages/home"
-
   get "pages/contact"
-
   get 'pages/help'
 
   match '/home', :to => 'pages#home'
   match '/contact', :to => 'pages#contact'
   match '/help', :to => 'pages#help'
+  match '/signup', :to => 'users#new'
 
   root :to => 'pages#home'
 
