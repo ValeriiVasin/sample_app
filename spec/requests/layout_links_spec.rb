@@ -21,5 +21,11 @@ describe "LayoutLinks" do
     response.should have_selector 'title', :content => "Sign up"
   end
 
+  it 'tests of right links on home page' do
+    visit root_path
+    click_link 'Sing Up'
+    response.should have_selector 'title', :content => 'Sign up'
+  end
+
 end
 
