@@ -31,6 +31,22 @@ describe UsersController do
       get :show, :id => @user
       assigns(:user).should == @user
     end
+    
+    it "should have a right title" do
+      get :show, :id => @user
+      response.should have_selector('title', :content => @user.name)
+    end
+
+    it "should include user name" do
+      get :show, :id => @user
+      response.should have_selector('h1', :content => @user.name)
+    end
+    
+     it "should have a profile image" do
+      get :show, :id => @user
+      response.should have_selector("h1>img", :class => "gravatar")
+    end
+    
   end
 
 end
