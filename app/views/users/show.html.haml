@@ -1,3 +1,3 @@
 %h1
   =@user.name
-  %img.gravatar{:src => 'http://russian.railstutorial.org/images/layout/logo.png?1304201481', :alt => 'hello world'}
+  =gravatar_image_tag @user.email, :class => 'gravatar'
